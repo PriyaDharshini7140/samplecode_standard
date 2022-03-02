@@ -9,6 +9,7 @@ function Textbox(props) {
     name={props.name}
     onChange={(e)=>props.onChange(e)}
     value={props.value}
+    
   />
   )
 }

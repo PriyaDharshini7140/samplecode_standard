@@ -1,4 +1,18 @@
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "./root-reducer";
-export const store = createStore(rootReducer,applyMiddleware(thunk))
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+const middlewares = [thunk];
+
+const composeEnhancers = composeWithDevTools({
+    name: "Redux",
+    realtime: true,
+    trace: true,
+  });
+
+export const store = createStore(
+    rootReducer,
+    composeEnhancers(applyMiddleware(...middlewares))
+  );
+

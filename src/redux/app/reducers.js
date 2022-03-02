@@ -2,7 +2,8 @@ import { AppActionsTypes } from "./actions-types";
 
 const INITIAL_STATE = {
   loading: false,
-  users: [],
+  users: {},
+  list:[],
   error: "",
 };
 
@@ -17,12 +18,13 @@ const reducer = (state = INITIAL_STATE, action) => {
       return {
         loading: false,
         users: action.payload,
-        error: "",
+        list:[],
+        error: ""
       };
     case AppActionsTypes.FETCH_USER_FAILURE:
       return {
         loading: false,
-        users: [],
+        users: {},
         error: action.payload,
       };
       case AppActionsTypes.ADD_USER_SUCCESS:
@@ -30,6 +32,11 @@ const reducer = (state = INITIAL_STATE, action) => {
           loading: false,
           users: action.payload,
           error: "",
+        };
+        case AppActionsTypes.VIEW_USER:
+        return {
+          ...state,
+        list: action.payload,
         };
       default:
       return state;

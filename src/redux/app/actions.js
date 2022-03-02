@@ -26,3 +26,9 @@ export const fetchUserRequest = () => {
       payload: posts
     }
   }
+  export const viewUserSuccess = posts => {
+    return {
+      type: AppActionsTypes.VIEW_USER,
+      payload: posts
+    }
+  }

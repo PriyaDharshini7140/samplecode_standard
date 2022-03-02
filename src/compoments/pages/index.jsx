@@ -1,5 +1,7 @@
-import {Home,Editpost} from './main'
+import {Home,Editpost,Profile,View} from './main'
 export{
     Home,
-    Editpost
+    Editpost,
+    Profile,
+   View
 }

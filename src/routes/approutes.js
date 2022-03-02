@@ -1,6 +1,6 @@
 import { BrowserRouter,Routes, Route } from "react-router-dom";
 import React from 'react'
-import { Editpost, Home } from "../compoments/pages";
+import { Editpost, Home, Profile, View } from "../compoments/pages";
 
 
 function Approutes() {
@@ -11,7 +11,8 @@ function Approutes() {
       <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/editpost' element={<Editpost/>}/>
-        
+      <Route path='/form' element={<Profile/>}/>
+      <Route path='/view' element={<View/>}/>
     </Routes>
       </BrowserRouter>
     </div>
